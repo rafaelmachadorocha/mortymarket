@@ -10,9 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_08_24_185627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "exchanges", force: :cascade do |t|
+    t.text "review"
+    t.bigint "rick_id", null: false
+    t.bigint "morty_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["morty_id"], name: "index_exchanges_on_morty_id"
+    t.index ["rick_id"], name: "index_exchanges_on_rick_id"
+  end
+
+  create_table "morties", force: :cascade do |t|
+    t.decimal "price"
+    t.text "description"
+    t.integer "rarity"
+    t.string "title"
+    t.bigint "rick_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["rick_id"], name: "index_morties_on_rick_id"
+  end
+
+  create_table "ricks", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "username"
+    t.text "bio"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_ricks_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_ricks_on_reset_password_token", unique: true
+  end
+
+  add_foreign_key "exchanges", "morties"
+  add_foreign_key "exchanges", "ricks"
+  add_foreign_key "morties", "ricks"
 end

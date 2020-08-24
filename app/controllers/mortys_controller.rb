@@ -1,0 +1,2 @@
+class MortysController < ApplicationController
+end
