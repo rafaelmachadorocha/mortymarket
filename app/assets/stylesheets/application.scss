@@ -11,3 +11,16 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+h2{
+  color: $green;
+  text-shadow: 0 0 3px $yellow;
+}
+
+body {
+   background-image: url("https://images8.alphacoders.com/633/thumb-1920-633270.png"); /* The image used */
+  background-color: #cccccc; /* Used if the image is unavailable */
+  background-position: center; /* Center the image */
+  background-repeat: repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
