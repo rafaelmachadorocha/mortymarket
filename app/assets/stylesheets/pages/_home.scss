@@ -1,1 +1,64 @@
 // Specific CSS for your home-page
+h2{
+	color: $green;
+	text-shadow: 0 0 3px $yellow;
+  }
+  
+.masthead {
+	width: 100%;
+	height: calc(100vh - 170px);
+	min-height: 35rem;
+	padding: 15rem 0;
+	background-color: black;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+#animate-area {
+	background-image: asset-url('Background.png');
+	background-position: 0px 0px;
+	background-repeat: repeat;
+	animation: mymove 30s linear infinite;
+}
+@keyframes mymove {
+	0% {
+		background-position: 0 0;
+		background-position-x: 0px;
+		background-position-y: 0px;
+		opacity: 0.3;
+	}
+	25% {
+		background-position: 25% 0;
+		background-position-x: 25%;
+		background-position-y: 0px;
+		opacity: 1;
+	}
+	50% {
+		background-position: 50% 0;
+		background-position-x: 50%;
+		background-position-y: 0px;
+		opacity: 0.3;
+	}
+	75% {
+		background-position: 75% 0;
+		background-position-x: 75%;
+		background-position-y: 0px;
+		opacity: 1;
+	}
+	100% {
+		background-position: 100% 0;
+		background-position-x: 100%;
+		background-position-y: 0px;
+		opacity: 0.3;
+	}
+}
+body {
+	background-color: black; /* Used if the image is unavailable */
+	background-position: center; /* Center the image */
+	background-repeat: repeat; /* Do not repeat the image */
+	background-size: cover; /* Resize the background image to cover the entire container */
+}
