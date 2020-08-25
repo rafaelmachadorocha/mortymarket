@@ -1,14 +1,15 @@
 class MortiesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [ :show, :index:, :search ]
-  before_action :set_morty
-  skip_before_action :authenticate_user!, only: :index, :show
+  skip_before_action :authenticate_rick!, only: [ :show, :index, :search ]
+  before_action :set_morty, except: [:index, :show]
+  skip_before_action :authenticate_rick!, only: [ :index, :show ]
 
   def index
-    @mortys = Morty.all
+    @morties = Morty.all
   end
 
   def show
-    @morty = Morty.find[:id]
+    @morty = Morty.find(params[:id])
+    @seller_rick = @morty.seller_rick
   end
 
   def new
