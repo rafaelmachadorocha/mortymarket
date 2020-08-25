@@ -1,9 +1,19 @@
 // Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Slime Tag Regular|Work+Sans:400,700&display=swap');
 
+
+@font-face {
+  font-family: "get-schwifty";
+  src: font-url('get-schwifty/get-schwifty.ttf') format('truetype');
+  font-weight: normal;
+}
+
+$my-font: "get-schwifty";
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: "Helvetica Neue";
+$body-font-bold: "Helvetica Neue Bold";
+$headers-font: $my-font, "Helvetica", "sans-serif";
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "get-schwifty";
+  src: font-url('get-schwifty/get-schwifty.eot');
+  src: font-url('get-schwifty/get-schwifty.eot?#iefix') format('embedded-opentype'),
+       font-url('get-schwifty/get-schwifty.woff') format('woff'),
+       font-url('get-schwifty/get-schwifty.ttf') format('truetype');
+  font-weight: normal;
+}
+
+$my-font: "get-schwifty";
+
+$base-font: $my-font;
+$header-font: $my-font;
