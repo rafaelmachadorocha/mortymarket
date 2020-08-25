@@ -33,16 +33,16 @@
   }
   
   /*Small devices (landscape phones, 576px and up)*/
-  @media (min-width: 576px) {
-    .cards {
-      grid-template-columns: 1fr 1fr;
-    }
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
   }
+}
   
-  /*Medium devices (tablets, 768px and up)*/
-  @media (min-width: 1200px) {
-    .cards {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+/*Medium devices (tablets, 768px and up)*/
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
   }
+}
   
