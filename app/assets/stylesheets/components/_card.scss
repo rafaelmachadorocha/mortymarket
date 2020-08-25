@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: space-around;
     font-size: 25px;
-    font-family: $my-font;
     color: $yellow;
     font-weight: bolder;
     text-shadow: 0 0 10px rgba(0,0,0,0.7);
@@ -31,18 +30,17 @@
       grid-template-columns: 1fr;
     }
   }
-  
+
   /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
   .cards {
     grid-template-columns: 1fr 1fr;
   }
 }
-  
+
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 1200px) {
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
-  
