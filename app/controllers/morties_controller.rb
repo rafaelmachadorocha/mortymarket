@@ -1,7 +1,6 @@
 class MortiesController < ApplicationController
   skip_before_action :authenticate_rick!, only: [ :show, :index, :search ]
-  before_action :set_morty, except: [:index, :show]
-  skip_before_action :authenticate_rick!, only: [ :index, :show ]
+  before_action :set_morty, only: [ :show, :update ]  
 
   def index
     @morties = Morty.all
@@ -13,31 +12,57 @@ class MortiesController < ApplicationController
   end
 
   def new
-
+    @morty = Morty.new
   end
 
   def create
+    @morty = Morty.new(morty_params)
+
+    if @morty.save
+      redirect_to @morty, notice: 'New Morty for sale! Wubba Lubba Dub Dub!'
+    else
+      render :new
+    end
+
   end
 
   def edit
+    if @morty.seller_rick == current_rick
+      @morty = Morty.find(params[:id])
+    else
+      redirect_to root_path
+    end      
   end
 
   def update
+    if @morty.update(morty_params)
+      redirect_to @morty, notice: 'Morty was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
+    if @morty.seller_rick == current_rick
+      @morty = Morty.find(params[:id])
+      @morty.destroy
+      redirect_to morties_url, notice: 'Morty removed from sale!'
+    else
+      redirect_to root_path
+    end  
   end
 
-  def search
-  end
+  # def search
+  # end
 
   private
 
   def set_morty
-    params.require(:morty).permit(:price, :description, :rarity, :title, :rick_id, :photo)
+    @morty = Morty.find(params[:id])
   end
 
-
-
+  def morty_params
+    params.require(:morty).permit(:price, :description, :rarity, :title, :rick_id, :photo)
+  end
 
 end

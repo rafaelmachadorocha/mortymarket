@@ -4,4 +4,5 @@ class Morty < ApplicationRecord
   has_one :buyer_rick, through: :exchange, source: :rick
   has_one_attached :photo
   validates :title, uniqueness: true
+  validates :rarity, inclusion: { in: 1..5 }
 end
