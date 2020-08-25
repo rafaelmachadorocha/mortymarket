@@ -11,11 +11,12 @@ Morty.destroy_all
 Rick.destroy_all
 
 
-m = Morty.new(price: 100, description: 'Good regular Morty', rarity: 2, title: "Pickle Morty")
-r = Rick.create!(email: 'teste@teste', password: '123123')
-m.rick = r
+m = Morty.new(price: 100, description: 'Good regular Morty', rarity: 2, title: Faker::TvShows::RickAndMorty.unique.character)
+r = Rick.create!(email: Faker::Internet.email, password: '123123', username: 'Simple Rick', bio: 'Very simple Rick')
+m.seller_rick = r
 m.save!
+r2 = Rick.create!(email: Faker::Internet.unique.email, password: '123123', username: 'Picle Rick', bio: 'PICLE RIIIIIIIIIIIIIICK!!')
 e = Exchange.new(review: 'Great deal!')
-e.bought_morty = m
-e.rick = r
+e.morty = m
+e.rick = r2
 e.save!

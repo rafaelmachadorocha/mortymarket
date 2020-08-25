@@ -1,0 +1,23 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://uploads.jovemnerd.com.br/wp-content/uploads/2019/02/rick-morty-50-hq.jpg);">
+  <div class="container">
+    <h1>Get rich, Rick!</h1>
+    <p>Sell your Morty and make money.</p>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <% @morties.each do |morty| %>
+  <%= link_to morty_path(morty) do %>
+    <div class="border mt-3 w-25">
+      <p><%= morty.title %></p>
+      <p><%= morty.price %></p>
+      <p><%= morty.rarity %></p>
+      <% if morty.photo.attached? %>
+        <%= cl_img_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+    </div>
+  <% end %>
+  <% end %>
+</div>
