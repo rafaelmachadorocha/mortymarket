@@ -25,8 +25,8 @@
               <%= image_tag 'avatar_rick.png', class: 'avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown"  }, aria: { haspopup: "true", expanded: "false"} %>
             <% end %>  
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">My profile</a>
-              <a class="dropdown-item" href="#">Sell a morty</a>
+              <%= link_to "My profile", profile_path(current_rick), class: 'dropdown-item' %>
+              <%= link_to "Sell a morty", new_morty_path, class: 'dropdown-item' %>
               <%= link_to "Sign out", destroy_rick_session_path, method: :delete, class: 'dropdown-item' %>
             </div>
           </div>
