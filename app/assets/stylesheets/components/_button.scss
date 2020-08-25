@@ -1,0 +1,25 @@
+.btn {
+    border: 0;
+    font: Helvetica;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    padding: .7rem 1.2rem;
+    outline: 0;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+.btn--yellow {
+    background: $yellow;
+}
+.btn--red {
+    background: $red;
+}
+.btn--green {
+    background: $green;
+}
+.btn:hover {
+    opacity: 1;
+  }
