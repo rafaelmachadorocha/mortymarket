@@ -4,7 +4,7 @@
       <%= link_to profile_path(@morty.seller_rick), class:'link-seller-info' do %>
         <div class="seller-info">
           <% if @morty.seller_rick.photo.attached? %>
-            <%= cl_image_tag morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill %>
+            <%= cl_image_tag @morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill %>
           <% else %>
             <%= image_tag 'avatar_rick.png', class: 'card-trip-user avatar' %>
           <% end %>
