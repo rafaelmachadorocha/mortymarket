@@ -36,7 +36,10 @@
       </div>
     <div class="masthead" id="animate-area"></div>
     <%= yield %>
-    <p class="alert"><%= alert %></p>
-    <p class="notice"><%= notice %></p>
+    <% if flash[:alert] %>
+      <p class="alert"><%= flash[:alert] %></p>
+    <% elsif flash[:notice] %>
+      <p class="notice"><%= flash[:notice] %></p>
+    <% end %>
   </body>
 </html>

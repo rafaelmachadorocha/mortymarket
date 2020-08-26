@@ -17,9 +17,9 @@ class MortiesController < ApplicationController
 
   def create
     @morty = Morty.new(morty_params)
-
+    @morty.seller_rick = current_rick
     if @morty.save
-      redirect_to @morty, notice: 'New Morty for sale! Wubba Lubba Dub Dub!'
+      redirect_to morty_path(@morty), alert: 'New Morty for sale! Wubba Lubba Dub Dub!'
     else
       render :new
     end
@@ -27,29 +27,29 @@ class MortiesController < ApplicationController
   end
 
   def edit
-    # if @morty.seller_rick == current_rick
-    #   @morty = Morty.find(params[:id])
-    # else
-    #   redirect_to root_path
-    # end      
+    if @morty.seller_rick == current_rick
+      @morty = Morty.find(params[:id])
+    else
+      redirect_to root_path, alert: 'You are not the owner of that Morty.'   
+    end      
   end
 
   def update
     if @morty.update(morty_params)
-      redirect_to @morty, notice: 'Morty was successfully updated.'
+      redirect_to morty_path(@morty), alert: 'Morty was successfully updated.' 
     else
       render :edit
     end
   end
 
   def destroy
-    # if @morty.seller_rick == current_rick
-    #   @morty = Morty.find(params[:id])
+    if @morty.seller_rick == current_rick
+      @morty = Morty.find(params[:id])
       @morty.destroy
-      redirect_to morties_url, notice: 'Morty removed from sale!'
-    # else
-    #   redirect_to root_path
-    # end  
+      redirect_to root_path, alert: 'Morty removed from sale!'  
+    else
+      redirect_to root_path, alert: 'You are not the owner of that Morty.'
+    end  
   end
 
   # def search

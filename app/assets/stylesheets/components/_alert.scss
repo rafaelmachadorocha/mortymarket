@@ -3,6 +3,14 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  width: 400px;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: #000000;
+  border: 1px solid $green;
+  transition: opacity 6s;
+  opacity: 0;
 }
 
 .notice {
@@ -10,5 +18,14 @@
   bottom: 16px;
   right: 16px;
   z-index: 1000;
+  width: 400px;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  text-align: center;
+  background-color: #000000;
+  border: 1px solid $green;
+  transition: opacity 6s;
+  opacity: 0;
 }
 
