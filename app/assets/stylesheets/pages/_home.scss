@@ -27,7 +27,8 @@ h2{
 	background-image: asset-url('Background.png');
 	background-position: 0px 0px;
 	background-repeat: repeat;
-	animation: mymove 30s linear infinite;
+  animation: mymove 30s linear infinite;
+  animation-direction: alternate;
 }
 @keyframes mymove {
 	0% {
