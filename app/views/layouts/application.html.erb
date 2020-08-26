@@ -7,12 +7,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
   <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-       <h2>Morty Market</h2>
+      <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+        <h2>Morty Market</h2>
         <% if rick_signed_in? %>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -32,9 +31,8 @@
         <% else %>
           <%= link_to "Sign in", new_rick_session_path, class: 'btn btn-primary' %>
         <% end %>
-    </div>
-    <div class="masthead" id="animate-area">
-    </div>
+      </div>
+    <div class="masthead" id="animate-area"></div>
     <%= yield %>
     <p class="alert"><%= alert %></p>
     <p class="notice"><%= notice %></p>
