@@ -1,6 +1,7 @@
 <div class="row justify-content-center p-4">
   <div class="col-12 col-md-6 col-lg-4">
     <h2 class="mb-4">New Morty</h2>
+
     <div class="form">
     <%= simple_form_for(@morty) do |f| %>    
     <%= f.input :title %>
@@ -11,5 +12,7 @@
     <%= f.submit class: 'btn btn-primary' %>
     <% end %>
     </div>
+    <%= render 'form', morty: @morty %>
+    <%= link_to "Back", morties_path, class:'btn btn-primary' %> 
   </div>
 </div>

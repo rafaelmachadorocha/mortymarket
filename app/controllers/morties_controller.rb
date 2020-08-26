@@ -1,6 +1,7 @@
 class MortiesController < ApplicationController
   skip_before_action :authenticate_rick!, only: [ :show, :index, :search ]
-  before_action :set_morty, only: [ :show, :update ]  
+  before_action :set_morty, only: [ :edit, :show, :update, :destroy ]  
+
 
   def index
     @morties = Morty.all
