@@ -1,6 +1,6 @@
 class MortiesController < ApplicationController
   skip_before_action :authenticate_rick!, only: [ :show, :index, :search ]
-  before_action :set_morty, only: [ :show, :update ]  
+  before_action :set_morty, only: [ :edit, :show, :update, :destroy ]  
 
   def index
     @morties = Morty.all
@@ -27,11 +27,11 @@ class MortiesController < ApplicationController
   end
 
   def edit
-    if @morty.seller_rick == current_rick
-      @morty = Morty.find(params[:id])
-    else
-      redirect_to root_path
-    end      
+    # if @morty.seller_rick == current_rick
+    #   @morty = Morty.find(params[:id])
+    # else
+    #   redirect_to root_path
+    # end      
   end
 
   def update
@@ -43,13 +43,13 @@ class MortiesController < ApplicationController
   end
 
   def destroy
-    if @morty.seller_rick == current_rick
-      @morty = Morty.find(params[:id])
+    # if @morty.seller_rick == current_rick
+    #   @morty = Morty.find(params[:id])
       @morty.destroy
       redirect_to morties_url, notice: 'Morty removed from sale!'
-    else
-      redirect_to root_path
-    end  
+    # else
+    #   redirect_to root_path
+    # end  
   end
 
   # def search

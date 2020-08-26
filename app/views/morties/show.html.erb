@@ -4,7 +4,7 @@
       <p><%= @morty.rarity %></p>
       <p><%= @morty.description %></p>
       <% if @morty.photo.attached? %>
-        <%= cl_img_tag photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_img_tag @morty.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
       <div>
         <%= link_to profile_path(@seller_rick) do %>
@@ -16,3 +16,4 @@
       </div>
 </div>
 <%= link_to "Back", morties_path, class:'btn btn-primary' %>
+<%= link_to "Edit your Morty", edit_morty_path(@morty), class:'btn btn-primary' %>
