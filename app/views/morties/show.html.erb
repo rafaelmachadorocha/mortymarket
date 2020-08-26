@@ -1,0 +1,18 @@
+<div class="border mt-3 w-25">
+      <p><%= @morty.title %></p>
+      <p><%= @morty.price %></p>
+      <p><%= @morty.rarity %></p>
+      <p><%= @morty.description %></p>
+      <% if @morty.photo.attached? %>
+        <%= cl_img_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <div>
+        <%= link_to profile_path(@seller_rick) do %>
+          <p><%= @seller_rick.username %></p>
+          <% if @seller_rick.photo.attached? %>
+            <%= cl_image_tag @seller_rick.photo.key, height: 50, width: 50, crop: :fill, gravity: :face %>
+          <% end %>
+        <% end %>
+      </div>
+</div>
+<%= link_to "Back", morties_path, class:'btn btn-primary' %>

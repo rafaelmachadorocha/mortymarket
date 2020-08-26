@@ -1,23 +1,37 @@
 // Specific CSS for your home-page
+<<<<<<< HEAD
+=======
+* {
+  position: relative;
+}
+h2{
+	color: $green;
+	text-shadow: 0 0 3px $yellow;
+  }
+
+  body {
+    min-height: 101vh; 
+  }
+  
+>>>>>>> front3
 .masthead {
-	width: 100%;
-	height: calc(100vh - 170px);
-	min-height: 35rem;
-	padding: 15rem 0;
-	background-color: black;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-attachment: scroll;
 	text-align: center;
 	display: flex;
 	align-items: center;
-	justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
 }
 #animate-area {
 	background-image: asset-url('Background.png');
 	background-position: 0px 0px;
 	background-repeat: repeat;
-	animation: mymove 30s linear infinite;
+  animation: mymove 30s linear infinite;
+  animation-direction: alternate;
 }
 @keyframes mymove {
 	0% {
@@ -53,7 +67,11 @@
 }
 body {
 	background-color: black; /* Used if the image is unavailable */
+<<<<<<< HEAD
 	background-position: center; /* Center the image */
 	background-repeat: repeat; /* Do not repeat the image */
 	background-size: cover; /* Resize the background image to cover the entire container */
 }
+=======
+}
+>>>>>>> front3
