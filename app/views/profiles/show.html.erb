@@ -1,7 +1,20 @@
-<h1><%= @rick.username %></h1>
-<% if @rick.photo.attached? %>
-  <%= cl_image_tag @rick.photo.key, transformation: { width: 80, height: 80, crop: :fill, gravity: :face, radius: 'max' } %>
-<% end %>
-<p><%= @rick.bio %></p>
-<%= link_to 'Back', :back, class:'btn btn-primary' %>
-<%= link_to "Edit your Profile", edit_profile_path(@rick), class:'btn btn-primary' %>
+<div class="container">
+  <div class="d-flex justify-content-center">...
+    <div class="profile-card">
+      <div class="profile-content rick">
+        <% if @rick.photo.attached? %>
+          <%= cl_image_tag @rick.photo.key, class: 'profilepic' %>
+        <% else %>
+          <%= image_tag 'avatar_rick.png', class: 'profilepic' %>
+        <% end %>
+        <h3 class="text-center my-3"><%= @rick.username %></h3>
+        <p class="text-justify"><%= @rick.bio %></p>
+        <p><strong>Morties sold: <%= @rick.sold_morties.count %></strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container d-flex justify-content-center mt-4 p-2">
+  <%= link_to 'Back', :back, class:'btn mr-2 btn--green' %>
+  <%= link_to "Edit your Profile", edit_profile_path(@rick), class:'btn btn--yellow' %>
+</div>
