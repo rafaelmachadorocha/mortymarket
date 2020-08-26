@@ -17,3 +17,13 @@ h1{
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.dropdown-toggle {
+  @media (max-height: 575px) {
+    margin-left: auto;
+    display: block;
+  }
+}
+
+
+
