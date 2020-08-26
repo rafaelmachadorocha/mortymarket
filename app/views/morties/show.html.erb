@@ -14,9 +14,11 @@
       <div class="profile-content">
         <h3><%= @morty.title %></h3>
         <span class="mr-2"><%= @morty.price %></span>
+        <div class="rarity-icons">
         <% @morty.rarity.times do %>
-          <i class="far fa-gem rarity-icon"></i>
+          <i class="far fa-gem rarity-icon-show"></i>
         <% end %>
+        </div>
         <p class="my-3"><%= @morty.description %></p>
         <% if @morty.photo.attached? %>
           <%= cl_img_tag @morty.photo.key, height: 300, width: 400, crop: :fill %>
