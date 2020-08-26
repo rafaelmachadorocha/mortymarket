@@ -1,18 +1,35 @@
-.profile{
+.profile-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 5px 5px 40px $green;
     padding-top: 10px;
     padding-right: 30px;
     padding-bottom: 10px;
     padding-left: 30px;
-    width: auto;
+    width: 50%;
     background-color: $gray;
     border-radius: 30px;
-    margin: 50px;
     color: $green;
+    justify-content: space-around;
 }
 
 .profilepic {
   width: 120px;
-    border-radius: 50%;
-    margin-top: -80px;
+  border-radius: 50%;
+  margin-top: 0px;
+  padding: 2px;
+  box-shadow: 0 0 19px -2px;
+}
+
+.profile-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 30px;
 }
