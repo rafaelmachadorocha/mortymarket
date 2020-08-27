@@ -2,14 +2,14 @@
   <div class="col-12 col-md-6 col-lg-4">
     <h2 class="mb-4">Edit Profile</h2>
     <div class="form">
-      <%= simple_form_for(@rick, url: profile_path(@rick)) do |f| %>    
+      <%= simple_form_for(@rick, url: profile_path(@rick)) do |f| %>
       <%= f.input :username %>
       <%= f.input :bio %>
       <%= f.input :photo, as: :file %>
-      <%= f.button :submit, class: 'btn btn--green mb-2' %>
+      <%= f.button :submit, class: 'sciFi-button mb-2' %>
       <% end %>
     </div>
-    <%= link_to 'Back', :back, class:'btn btn--yellow' %>
-    <%= link_to "Home", morties_path, class:'btn btn--green' %>
-  </div>  
+    <%= link_to 'Back', :back, class:'sciFi-button btn--yellow' %>
+    <%= link_to "Home", morties_path, class:'sciFi-button' %>
+  </div>
 </div>

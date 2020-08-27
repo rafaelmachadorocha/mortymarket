@@ -10,7 +10,7 @@ h2{
 
 body {
   min-height: 101vh;
-  font-family: 'helvetica neue', sans-serif; 
+  font-family: 'helvetica neue', sans-serif;
 }
 
 .masthead {
@@ -29,39 +29,26 @@ body {
 	background-image: asset-url('Background.png');
 	background-position: 0px 0px;
 	background-repeat: repeat;
-  animation: mymove 30s linear infinite;
+  animation: mymove 40s ease-in-out infinite;
   animation-direction: alternate;
 }
 @keyframes mymove {
 	0% {
-		background-position: 0 0;
 		background-position-x: 0px;
-		background-position-y: 0px;
-		opacity: 0.3;
+		opacity: 0.5;
 	}
 	25% {
-		background-position: 25% 0;
-		background-position-x: 25%;
-		background-position-y: 0px;
 		opacity: 1;
 	}
 	50% {
-		background-position: 50% 0;
-		background-position-x: 50%;
-		background-position-y: 0px;
 		opacity: 0.3;
 	}
 	75% {
-		background-position: 75% 0;
-		background-position-x: 75%;
-		background-position-y: 0px;
 		opacity: 1;
 	}
 	100% {
-		background-position: 100% 0;
 		background-position-x: 100%;
-		background-position-y: 0px;
-		opacity: 0.3;
+		opacity: 0.5;
 	}
 }
 body {

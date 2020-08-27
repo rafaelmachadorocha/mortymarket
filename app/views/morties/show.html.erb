@@ -29,13 +29,13 @@
     </div>
   </div>
 </div>
-<div class="container d-flex justify-content-center mt-4 p-2">  
-  <%= link_to "Back", morties_path, class:'btn mr-2 btn--green' %>
+<div class="container d-flex justify-content-center mt-4 p-2">
+  <%= link_to "Back", morties_path, class:'sciFi-button mr-2' %>
   <% if @morty.seller_rick == current_rick && rick_signed_in? %>
-    <%= link_to "Edit your Morty", edit_morty_path(@morty), class:'btn btn--yellow' %>
+    <%= link_to "Edit your Morty", edit_morty_path(@morty), class:'sciFi-button btn--yellow' %>
     <%= link_to "Remove from Sale", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
   <% else %>
-    <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'btn btn--red' %>
+    <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'sciFi-button btn--red' %>
   <% end %>
 </div>
 
