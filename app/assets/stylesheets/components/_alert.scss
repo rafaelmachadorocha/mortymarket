@@ -1,24 +1,11 @@
 .alert {
+  font-family: 'Helvetica Neue', sans-serif;
   position: fixed;
   bottom: 16px;
   right: 16px;
   z-index: 1000;
   width: 400px;
   padding: 10px;
-  color: white;
-  text-align: center;
-  background-color: rgba(0,0,0, .8);
-  border: 1px solid $green;
-}
-
-.notice {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
-  z-index: 1000;
-  width: 400px;
-  padding: 10px;
-  text-align: center;
   color: white;
   text-align: center;
   background-color: rgba(0,0,0, .8);
@@ -40,5 +27,5 @@
 
 .disappear {
   opacity: 0;
-  transition: 1s;
+  transition: .5s;
 }

@@ -1,17 +1,16 @@
 const removeAlertAndNotice = () => {
 
-  const closeAlert = document.querySelector('#close');
-  if (closeAlert) {
-    closeAlert.addEventListener('click', (event) => {
-      const alert = event.currentTarget.parentNode;
-      alert.classList.add('disappear');
-      setTimeout(() => {
-        alert.remove();
-      }, 1000);
+  const alert = document.querySelector('.alert');
+  if (alert) {
+
+     document.documentElement.addEventListener('click', (event) => {
+       alert.classList.add('disappear');
+       setTimeout(() => {
+         alert.remove();
+       }, 500);
   
-    });
+     });
   }
 }
-
 
 export { removeAlertAndNotice };
