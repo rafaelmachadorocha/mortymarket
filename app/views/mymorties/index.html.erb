@@ -24,3 +24,55 @@
     <% end %>
   </div>
 </div> 
+<div class="container p-5">
+<h2 class="text-center">Morties I am selling</h2>
+  <div class="row mt-3">
+    <% @forsalemorties.each do |morty| %>
+      <div class="col-12 col-md-6 col-lg-4">
+      <%= link_to morty_path(morty) do %> 
+        <div class="card-trip mt-3">
+          <% if morty.photo.attached? %>
+              <%= cl_image_tag morty.photo.key, class: 'card-trip-user', crop: :fill, gravity: :face  %>
+            <% else %>
+              <%= image_tag 'Morty3.png', class: 'card-trip-user' %>
+            <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= morty.title %></h2>
+              <% morty.rarity.times do %>
+                <i class="far fa-gem rarity-icon"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+</div> 
+<div class="container p-5">
+<h2 class="text-center">Morties sold by me</h2>
+  <div class="row mt-3">
+    <% @soldmorties.each do |morty| %>
+      <div class="col-12 col-md-6 col-lg-4">
+      <%= link_to morty_path(morty) do %> 
+        <div class="card-trip mt-3">
+          <% if morty.photo.attached? %>
+              <%= cl_image_tag morty.photo.key, class: 'card-trip-user', crop: :fill, gravity: :face  %>
+            <% else %>
+              <%= image_tag 'Morty3.png', class: 'card-trip-user' %>
+            <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= morty.title %></h2>
+              <% morty.rarity.times do %>
+                <i class="far fa-gem rarity-icon"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+</div> 
