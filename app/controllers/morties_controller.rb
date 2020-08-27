@@ -8,8 +8,8 @@ class MortiesController < ApplicationController
 
   def show
     @morty = Morty.find(params[:id])
-    @exchange = Exchange.new
     @seller_rick = @morty.seller_rick
+    @exchange = Exchange.new
   end
 
   def new
