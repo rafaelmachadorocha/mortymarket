@@ -32,7 +32,9 @@
       <%= link_to "Edit your Morty", edit_morty_path(@morty), class:'mr-2 btn btn--yellow' %>
       <%= link_to "Remove from Sale", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
     <% end %>
-    <%= link_to "Buy Morty!", '#', class:'btn btn--red', id:'button-purchase' %>
+    <% if @morty.seller_rick == current_rick %>
+      <%= link_to "Buy Morty!", '#', class:'btn btn--red', id:'button-purchase' %>
+    <% end %>
   </div>
   <div class="profile-card mt-4 display_none" id="purchase-card">
     <h3 class="p-2 mt-2">Yes, buy <%= @morty.title %>, <%= current_rick.username %>!</h3>
