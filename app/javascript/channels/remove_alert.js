@@ -7,11 +7,10 @@ const removeAlertAndNotice = () => {
       alert.classList.add('disappear');
       setTimeout(() => {
         alert.remove();
-      }, 1000);
+      }, 500);
   
     });
   }
 }
-
 
 export { removeAlertAndNotice };

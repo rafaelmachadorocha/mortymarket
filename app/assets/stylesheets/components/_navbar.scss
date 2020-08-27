@@ -25,5 +25,63 @@ h1{
   }
 }
 
+#dropdown-button {
+  cursor: pointer;
+}
+
+.navigation-menu {
+  position: absolute;
+  width: 200px;
+  top: 100%;
+  right: 0;
+  z-index: 2;
+  padding: 10px;
+  background-color: rgba(0,0,0, .8);
+  visibility: visible;
+  overflow: hidden;
+  opacity: 1;
+  transition: .5s opacity, 0s visibility, 0s z-index;
+  transition-delay: 0s, 0s, 0s;
+  border-radius: 0 0 5px 5px;
+
+}
+
+.navigation-link {
+  color: $green;
+  font-family: 'helvetica neue', sans-serif;
+  display: block;
+  padding: 7px 0;
+  
+  &:hover {
+    color: $green;
+    text-shadow: 0 0 3px #f8f26a;
+  }
+}
+
+.sign-in-link {
+  font-weight: bold;
+}
+
+.link-border {
+  background: linear-gradient(90deg, transparent, $green);
+  height: 1px;
+  width: 100%;
+  position: absolute;
+  right: 100%;
+}
+
+.navigation-link:hover + .link-border {
+  right: -100%;
+  transition: right 1s;
+
+}
+
+.collapsed {
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1;
+  transition-delay: 0s, .5s, .5s;
+}
+
 
 
