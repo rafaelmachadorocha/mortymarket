@@ -11,8 +11,10 @@
     <div class="navigation-menu collapsed" aria-labelledby="navbarDropdown">
       <%= link_to "My profile", profile_path(current_rick), class: 'navigation-link' %>
       <span class="link-border"></span>
-      <%= link_to "Sell a morty", new_morty_path, class: 'navigation-link' %>
+      <%= link_to "My Morties", mymorties_path, class: 'navigation-link' %>
         <span class="link-border"></span>
+      <%= link_to "Sell a Morty", new_morty_path, class: 'navigation-link' %>
+        <span class="link-border"></span>  
       <%= link_to "Sign out", destroy_rick_session_path, method: :delete, class: 'navigation-link' %>
         <span class="link-border"></span>
     </div>  
