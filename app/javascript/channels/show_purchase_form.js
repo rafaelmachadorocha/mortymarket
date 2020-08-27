@@ -5,7 +5,7 @@ const showPurchase = () => {
     event.preventDefault();
     card.classList.remove('display_none')
     window.scrollTo({
-      top: (card.parentNode.offsetTop + card.offsetHeight),
+      top: (card.offsetTop + card.offsetHeight),
       behavior: 'smooth'
     });  
   });
