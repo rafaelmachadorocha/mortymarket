@@ -40,17 +40,9 @@
     <h5 class="p-2 mt-2">Yes, buy <%= @morty.title %>, <%= current_rick.username %>!</h5>
     <h6 class="mb-2">Leave a message to the seller!</h6>
     <%= simple_form_for [@morty, @exchange] do |f| %>
-      <%= f.input, as: :radio_buttons %>
+      <%= f.input :payment, as: :radio_buttons, collection: ['Blemflarck', 'Flurbo', 'Crystal'], wrapper: :vertical_collection_inline %>
       <%= f.input :review, input_html: { rows: 3, cols: 45 } %>
       <%= f.button :submit, 'Confirm Purchase', class: 'btn btn-primary' %>
     <% end %>
   </div>
 </div>
-
-
-
-
-
- 
-
-
