@@ -10,6 +10,6 @@ Rails.application.routes.draw do
   resources :morties do
     resources :exchanges, only: [:show, :new, :create]
   end  
-  get '/my_morties', to: 'morties#my_morties'
+  get '/mymorties', to: 'mymorties#index'
   
 end
