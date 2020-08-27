@@ -1,18 +1,18 @@
 <div class="container">
-  <div class="d-flex justify-content-center">...
-    <div class="profile-card mt-5">
-      <div class="profile-content rick">
-        <% if @rick.photo.attached? %>
-          <%= cl_image_tag @rick.photo.key, class: 'profilepic' %>
-        <% else %>
-          <%= image_tag 'avatar_rick.png', class: 'profilepic' %>
-        <% end %>
-        <h3 class="text-center my-3"><%= @rick.username %></h3>
-        <p class="text-justify"><%= @rick.bio %></p>
-        <p><strong>Morties sold: <%= @rick.sold_morties.count %></strong></p>
-      </div>
+  
+  <div class="profile-card mt-5">
+    <div class="profile-content rick">
+      <% if @rick.photo.attached? %>
+        <%= cl_image_tag @rick.photo.key, class: 'profilepic' %>
+      <% else %>
+        <%= image_tag 'avatar_rick.png', class: 'profilepic' %>
+      <% end %>
+      <h3 class="text-center my-3"><%= @rick.username %></h3>
+      <p class="text-justify"><%= @rick.bio %></p>
+      <p><strong>Morties sold: <%= @rick.sold_morties.count %></strong></p>
     </div>
   </div>
+ 
 </div>
 <div class="container d-flex justify-content-center mt-4 p-2">
   <%= link_to 'Back', :back, class:'sciFi-button mr-2' %>

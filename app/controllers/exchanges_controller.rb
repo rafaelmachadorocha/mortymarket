@@ -1,12 +1,13 @@
 class ExchangesController < ApplicationController
   # skip_before_action :authenticate_rick!, only: :new
-  before_action :set_morty, only: :create 
+  before_action :set_morty, only: [:create, :new] 
 
   def show
     @exchange = Exchange.find(params[:id])
   end
 
-  def new  
+  def new
+    @exchange = Exchange.new  
   end
 
   def create
@@ -28,7 +29,7 @@ class ExchangesController < ApplicationController
   end
 
   def exchange_params
-    params.require(:exchange).permit(:review, :morty_id, :rick_id)
+    params.require(:exchange).permit(:review, :morty_id, :rick_id, :payment)
   end
 
 end

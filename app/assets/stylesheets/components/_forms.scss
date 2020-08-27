@@ -3,3 +3,11 @@ label, .devise_link {
   text-shadow: 0 0 1px black;
 
 }
+
+label[for="exchange_review"] {
+  display: none;
+}
+
+#exchange_review {
+  width: 100%;
+}

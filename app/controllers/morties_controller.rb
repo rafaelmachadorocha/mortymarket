@@ -3,13 +3,24 @@ class MortiesController < ApplicationController
   before_action :set_morty, only: [ :edit, :show, :update, :destroy ]  
 
   def index
-    @morties = Morty.all
+    search = params[:search]
+
+    if search.present?
+      sql = "title ILIKE :query OR description ILIKE :query"
+      @morties = Morty.where(sql, query: "%#{search}%")
+    else
+      all_morties = Morty.all
+      @morties = all_morties.select do |morty|
+        morty.buyer_rick.blank?
+      end
+    end
+  
   end
 
   def show
     @morty = Morty.find(params[:id])
-    @exchange = Exchange.new
     @seller_rick = @morty.seller_rick
+    @exchange = Exchange.new
   end
 
   def new
@@ -53,8 +64,13 @@ class MortiesController < ApplicationController
     end  
   end
 
-  # def search
-  # end
+  def my_morties
+    all_morties = Morty.all
+    @morties = all_morties.select do |morty|
+      # morty.seller_rick == current_rick && morty.buyer_rick.nil?
+      morty.buyer_rick == current_rick
+    end
+  end
 
   private
 

@@ -1,42 +1,55 @@
 <div class="container">
-  <div class="d-flex justify-content-center">...
-    <div class="profile-card mt-5">
-      <%= link_to profile_path(@morty.seller_rick), class:'link-seller-info' do %>
-        <div class="seller-info">
-          <% if @morty.seller_rick.photo.attached? %>
-            <%= cl_image_tag @morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill %>
-          <% else %>
-            <%= image_tag 'avatar_rick.png', class: 'card-trip-user avatar' %>
-          <% end %>
-          <p>Seller</p>
-        </div>
-      <% end %>
-      <div class="profile-content">
-        <h3><%= @morty.title %></h3>
-        <span class="mr-2">฿<%= @morty.price %></span>
-        <div class="rarity-icons">
-        <% @morty.rarity.times do %>
-          <i class="far fa-gem rarity-icon-show"></i>
-        <% end %>
-        </div>
-        <p class="my-3"><%= @morty.description %></p>
-        <% if @morty.photo.attached? %>
-          <%= cl_image_tag @morty.photo.key, height: 300, width: 400, crop: :fill %>
+
+  <div class="profile-card mt-5">
+    <%= link_to profile_path(@morty.seller_rick), class:'link-seller-info' do %>
+      <div class="seller-info">
+        <% if @morty.seller_rick.photo.attached? %>
+          <%= cl_image_tag @morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill %>
         <% else %>
-          <%= image_tag 'Morty3.png', class: 'show-image' %>
+          <%= image_tag 'avatar_rick.png', class: 'card-trip-user avatar' %>
         <% end %>
+        <p>Seller</p>
       </div>
+    <% end %>
+    <div class="profile-content">
+      <h3><%= @morty.title %></h3>
+      <span class="mr-2">฿ <%= @morty.price %></span>
+      <div class="rarity-icons">
+      <% @morty.rarity.times do %>
+        <i class="far fa-gem rarity-icon-show"></i>
+      <% end %>
+      </div>
+      <p class="my-3"><%= @morty.description %></p>
+      <% if @morty.photo.attached? %>
+        <%= cl_image_tag @morty.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag 'Morty3.png', class: 'show-image' %>
+      <% end %>
     </div>
   </div>
-</div>
-<div class="container d-flex justify-content-center mt-4 p-2">
-  <%= link_to "Back", morties_path, class:'sciFi-button mr-2' %>
-  <% if @morty.seller_rick == current_rick && rick_signed_in? %>
-    <%= link_to "Edit your Morty", edit_morty_path(@morty), class:'sciFi-button btn--yellow' %>
-    <%= link_to "Remove from Sale", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
-  <% else %>
-    <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'sciFi-button btn--red' %>
-  <% end %>
-</div>
-
-<%= render 'exchanges/new' %>
+  <div class="container d-flex justify-content-center mt-4 p-2">  
+    <%= link_to "Back", morties_path, class:'sciFi-button mr-2 btn--green' %>
+    <% if @morty.seller_rick == current_rick && rick_signed_in? %>
+      <%= link_to "Edit", new_morty_path(@morty), class:'mr-2 sciFi-button btn--yellow' %>
+      <%= link_to "Remove", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'sciFi-button btn--red' %>
+    <% end %>
+    <% if @morty.seller_rick != current_rick && @morty.exchange.blank?  %>
+      <% unless rick_signed_in? %>
+        <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'sciFi-button btn--red' %>
+      <% else %>
+        <%= link_to "Buy Morty!", '#', class:'sciFi-button btn--red', id: 'button-purchase' %>
+      <% end %>
+    <% end %>
+  </div>
+  <% if rick_signed_in? %>
+    <div class="profile-card mt-4 display_none" id="purchase-card">
+      <h5 class="p-2 mt-2">Yes, buy <%= @morty.title %>, <%= current_rick.username %>!</h5>
+      <h6 class="mb-2">Leave a message to the seller!</h6>
+      <%= simple_form_for [@morty, @exchange] do |f| %>
+        <%= f.input :payment, as: :radio_buttons, collection: ['Blemflarck', 'Flurbo', 'Crystal'], wrapper: :vertical_collection_inline %>
+        <%= f.input :review, input_html: { rows: 3, cols: 45 } %>
+        <%= f.button :submit, 'Confirm Purchase', class: 'sciFi-button' %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

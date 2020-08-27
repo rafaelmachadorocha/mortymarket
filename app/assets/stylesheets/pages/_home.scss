@@ -9,48 +9,49 @@ h2{
   }
 
 body {
-  min-height: 101vh;
+  min-height: 105vh;
+  width: 100%;
   font-family: 'helvetica neue', sans-serif;
+  padding-bottom: 20px;
+  overflow-x: hidden; 
+  background-color: black; /* Used if the image is unavailable */
 }
 
-.masthead {
-	text-align: center;
-	display: flex;
-	align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-}
-#animate-area {
-	background-image: asset-url('Background.png');
-	background-position: 0px 0px;
-	background-repeat: repeat;
-  animation: mymove 40s ease-in-out infinite;
-  animation-direction: alternate;
-}
-@keyframes mymove {
-	0% {
-		background-position-x: 0px;
-		opacity: 0.5;
-	}
-	25% {
-		opacity: 1;
-	}
-	50% {
-		opacity: 0.3;
-	}
-	75% {
-		opacity: 1;
-	}
-	100% {
-		background-position-x: 100%;
-		opacity: 0.5;
-	}
-}
-body {
-	background-color: black; /* Used if the image is unavailable */
-}
+  .masthead {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+  #animate-area {
+    background-image: asset-url('Background.png');
+    background-position: 0px 0px;
+    background-repeat: repeat;
+    animation: mymove 40s ease-in-out infinite;
+    animation-direction: alternate;
+  }
+  @keyframes mymove {
+    0% {
+      background-position-x: 0px;
+      opacity: 0.5;
+    }
+    25% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      background-position-x: 100%;
+      opacity: 0.5;
+    }
+  }
