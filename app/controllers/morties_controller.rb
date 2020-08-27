@@ -3,10 +3,7 @@ class MortiesController < ApplicationController
   before_action :set_morty, only: [ :edit, :show, :update, :destroy ]  
 
   def index
-    all_morties = Morty.all
-    @morties = all_morties.select do |morty|
-      morty.buyer_rick.nil?
-    end
+    @morties = Morty.all
   end
 
   def show
