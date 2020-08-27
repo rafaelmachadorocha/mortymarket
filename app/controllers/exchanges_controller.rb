@@ -29,7 +29,7 @@ class ExchangesController < ApplicationController
   end
 
   def exchange_params
-    params.require(:exchange).permit(:review, :morty_id, :rick_id)
+    params.require(:exchange).permit(:review, :morty_id, :rick_id, :payment)
   end
 
 end
