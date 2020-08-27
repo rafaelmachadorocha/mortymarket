@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+    <div class="profile-card mt-5">
+      <h1>Purchase Information</h1>
+      <h2> Morty: <%= @exchange.morty.title %></h2>
+      <h3> Buyer: <%= @exchange.rick.username %></h3>
+      <h3> Seller: <%= @exchange.morty.seller_rick %></h3>
+      <p> Review: <%= @exchange.review %></p>
+    </div>
+  </div>
+</div>
+<div class="container d-flex justify-content-center mt-4 p-2">
+  <%= link_to "Back", morties_path, class:'btn mr-2 btn--green' %>
+</div>
