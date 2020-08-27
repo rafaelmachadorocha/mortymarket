@@ -30,7 +30,7 @@
   <div class="container d-flex justify-content-center mt-4 p-2">  
     <%= link_to "Back", morties_path, class:'sciFi-button mr-2 btn--green' %>
     <% if @morty.seller_rick == current_rick && rick_signed_in? %>
-      <%= link_to "Edit", new_morty_path(@morty), class:'mr-2 sciFi-button btn--yellow' %>
+      <%= link_to "Edit", edit_morty_path(@morty), class:'mr-2 sciFi-button btn--yellow' %>
       <%= link_to "Remove", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'sciFi-button btn--red' %>
     <% end %>
     <% if @morty.seller_rick != current_rick && @morty.exchange.blank?  %>
