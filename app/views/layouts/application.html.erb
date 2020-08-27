@@ -37,7 +37,7 @@
     <% if flash[:alert] %>
       <p class="alert"><%= flash[:alert] %><span id="close">&times</span></p>
     <% elsif flash[:notice] %>
-      <p class="notice"><%= flash[:notice] %><span id="close">&times</span></p>
+      <p class="alert"><%= flash[:notice] %><span id="close">&times</span></p>
     <% end %>
   </body>
 </html>
