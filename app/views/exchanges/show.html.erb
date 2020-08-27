@@ -5,6 +5,7 @@
       <h6> Morty: <%= @exchange.morty.title %></h6>
       <h6> Buyer: <%= @exchange.rick.username %></h6>
       <h6> Seller: <%= @exchange.morty.seller_rick.username %></h6>
+      <h6> Payment: <%= @exchange.payment %></h6>
       <% if @exchange.review.present? %>
         <p> Review: <%= @exchange.review %></p>
       <% end %>
