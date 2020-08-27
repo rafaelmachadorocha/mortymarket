@@ -1,0 +1,22 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<%= link_to root_path do %>
+  <h1>Morty Market</h1>
+<% end %>
+  <% if rick_signed_in? %>
+    <% if current_rick.photo.attached? %>
+      <%= cl_image_tag current_rick.photo.key, class: 'avatar', id: 'dropdown-button' %>
+    <% else %>
+      <%= image_tag 'avatar_rick.png', class: 'avatar', id: 'dropdown-button' %>
+    <% end %>  
+    <div class="navigation-menu collapsed" aria-labelledby="navbarDropdown">
+      <%= link_to "My profile", profile_path(current_rick), class: 'navigation-link' %>
+      <span class="link-border"></span>
+      <%= link_to "Sell a morty", new_morty_path, class: 'navigation-link' %>
+        <span class="link-border"></span>
+      <%= link_to "Sign out", destroy_rick_session_path, method: :delete, class: 'navigation-link' %>
+        <span class="link-border"></span>
+    </div>  
+  <% else %>
+    <%= link_to "Sign in", new_rick_session_path, class: 'navigation-link sign-in-link' %>
+  <% end %>
+</div>
