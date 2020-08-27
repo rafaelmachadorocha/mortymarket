@@ -1,33 +1,33 @@
 <div class="container">
-  <div class="d-flex justify-content-center">...
-    <div class="profile-card mt-5">
-      <%= link_to profile_path(@morty.seller_rick), class:'link-seller-info' do %>
-        <div class="seller-info">
-          <% if @morty.seller_rick.photo.attached? %>
-            <%= cl_image_tag @morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill %>
-          <% else %>
-            <%= image_tag 'avatar_rick.png', class: 'card-trip-user avatar' %>
-          <% end %>
-          <p>Seller</p>
-        </div>
-      <% end %>
-      <div class="profile-content">
-        <h3><%= @morty.title %></h3>
-        <span class="mr-2">฿<%= @morty.price %></span>
-        <div class="rarity-icons">
-        <% @morty.rarity.times do %>
-          <i class="far fa-gem rarity-icon-show"></i>
-        <% end %>
-        </div>
-        <p class="my-3"><%= @morty.description %></p>
-        <% if @morty.photo.attached? %>
-          <%= cl_image_tag @morty.photo.key, height: 300, width: 400, crop: :fill %>
+
+  <div class="profile-card mt-5">
+    <%= link_to profile_path(@morty.seller_rick), class:'link-seller-info' do %>
+      <div class="seller-info">
+        <% if @morty.seller_rick.photo.attached? %>
+          <%= cl_image_tag @morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill %>
         <% else %>
-          <%= image_tag 'Morty3.png', class: 'show-image' %>
+          <%= image_tag 'avatar_rick.png', class: 'card-trip-user avatar' %>
         <% end %>
+        <p>Seller</p>
       </div>
+    <% end %>
+    <div class="profile-content">
+      <h3><%= @morty.title %></h3>
+      <span class="mr-2">฿ <%= @morty.price %></span>
+      <div class="rarity-icons">
+      <% @morty.rarity.times do %>
+        <i class="far fa-gem rarity-icon-show"></i>
+      <% end %>
+      </div>
+      <p class="my-3"><%= @morty.description %></p>
+      <% if @morty.photo.attached? %>
+        <%= cl_image_tag @morty.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag 'Morty3.png', class: 'show-image' %>
+      <% end %>
     </div>
   </div>
+
 </div>
 <div class="container d-flex justify-content-center mt-4 p-2">  
   <%= link_to "Back", morties_path, class:'btn mr-2 btn--green' %>
@@ -35,7 +35,7 @@
     <%= link_to "Edit your Morty", edit_morty_path(@morty), class:'btn btn--yellow' %>
     <%= link_to "Remove from Sale", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
   <% else %>
-    <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'btn btn--red' %>
+    <%= link_to "Buy Morty!", '#', class:'btn btn--red', id:'button-purchase' %>
   <% end %>
 </div>
 

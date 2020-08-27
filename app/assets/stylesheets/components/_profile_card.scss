@@ -1,4 +1,4 @@
-.profile-card{
+.profile-card {
   font-family: 'helvetica neue', sans-serif;
   display: flex;
   flex-direction: column;
@@ -13,6 +13,13 @@
   border-radius: 30px;
   color: $green;
   justify-content: space-around;
+  width: 500px;
+  margin: 0 auto;
+
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+  
 }
 
 .profilepic {
@@ -51,4 +58,8 @@ a.link-seller-info {
   right: 8%;
   top: 5%;
   z-index: 1;
+}
+
+.display_none {
+  display: none;
 }

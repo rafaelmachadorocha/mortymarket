@@ -1,13 +1,12 @@
 <div class="container">
-  <div class="d-flex justify-content-center">
-    <div class="profile-card mt-5">
-      <h2>Yes, buy <%= @morty.title %>, <%= current_rick.username %>!</h2>
-      <h3>Leave a message to the seller!</h3>
-      <%= simple_form_for [@morty, @exchange] do |f| %>
-        <%= f.input :review %>
-        <%= f.button :submit, 'Confirm Purchase', class: 'btn btn-primary' %>
-      <% end %>
-      <%# Alterar o morty.seller_rick ?? Deletar o Morty ?? %>
-    </div>
+  <div class="profile-card mt-4 display_none" id="purchase-card">
+    <h3 class="p-2 mt-2">Yes, buy <%= @morty.title %>, <%= current_rick.username %>!</h3>
+    <h6 class="mb-2">Leave a message to the seller!</h6>
+    <%= simple_form_for [@morty, @exchange] do |f| %>
+      <%= f.input :review, input_html: { rows: 3, cols: 45 } %>
+      <%= f.button :submit, 'Confirm Purchase', class: 'btn btn-primary' %>
+    <% end %>
   </div>
 </div>
+
+
