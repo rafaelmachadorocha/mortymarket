@@ -33,10 +33,12 @@
       <%= link_to "Edit your Morty", new_morty_path(@morty), class:'mr-2 btn btn--yellow' %>
       <%= link_to "Remove from Sale", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
     <% end %>
-    <% unless rick_signed_in? %>
-      <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'btn btn--red' %>
-    <% else %>
-      <%= link_to "Buy Morty!", '#', class:'btn btn--red', id: 'button-purchase' %>
+    <% if @morty.seller_rick != current_rick  %>
+      <% unless rick_signed_in? %>
+        <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'btn btn--red' %>
+      <% else %>
+        <%= link_to "Buy Morty!", '#', class:'btn btn--red', id: 'button-purchase' %>
+      <% end %>
     <% end %>
   </div>
   <% if rick_signed_in? %>
