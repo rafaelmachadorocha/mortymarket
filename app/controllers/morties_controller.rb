@@ -3,7 +3,10 @@ class MortiesController < ApplicationController
   before_action :set_morty, only: [ :edit, :show, :update, :destroy ]  
 
   def index
-    @morties = Morty.all
+    all_morties = Morty.all
+    @morties = all_morties.select do |morty|
+      morty.buyer_rick.nil?
+    end
   end
 
   def show
@@ -53,8 +56,13 @@ class MortiesController < ApplicationController
     end  
   end
 
-  # def search
-  # end
+  def my_morties
+    all_morties = Morty.all
+    @morties = all_morties.select do |morty|
+      # morty.seller_rick == current_rick && morty.buyer_rick.nil?
+      morty.buyer_rick == current_rick
+    end
+  end
 
   private
 

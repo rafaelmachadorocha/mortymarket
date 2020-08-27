@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <h1>My Bought Morties</h1>  
+</div>
+
+<div class="container p-5">
+  <div class="row mt-3">
+    <% @morties.each do |morty| %>
+      <div class="col-12 col-md-6 col-lg-4">
+      <%= link_to morty_path(morty) do %> 
+        <div class="card-trip mt-3">
+          <% if morty.photo.attached? %>
+              <%= cl_image_tag morty.photo.key, class: 'card-trip-user', crop: :fill, gravity: :face  %>
+            <% else %>
+              <%= image_tag 'Morty3.png', class: 'card-trip-user' %>
+            <% end %>
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= morty.title %></h2>
+              <% morty.rarity.times do %>
+                <i class="far fa-gem rarity-icon"></i>
+              <% end %>
+            </div>
+            <h2 class="card-trip-pricing">฿<%= morty.price %></h2>
+            <% if morty.seller_rick.photo.attached? %>
+              <%= cl_image_tag morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill, gravity: :face %>
+            <% else %>
+              <%= image_tag 'avatar_rick.png', class: 'card-trip-user avatar' %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container d-flex justify-content-center mt-4 p-2">  
+  <%= link_to "Back", morties_path, class:'btn mr-2 btn--green' %>
+</div>
