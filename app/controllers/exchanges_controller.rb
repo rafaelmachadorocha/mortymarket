@@ -1,13 +1,12 @@
 class ExchangesController < ApplicationController
   # skip_before_action :authenticate_rick!, only: :new
-  before_action :set_morty, only: [ :new, :create ]
+  before_action :set_morty, only: :create 
 
   def show
     @exchange = Exchange.find(params[:id])
   end
 
-  def new
-    @exchange = Exchange.new    
+  def new  
   end
 
   def create
@@ -16,9 +15,9 @@ class ExchangesController < ApplicationController
     @exchange.morty = @morty
 
     if @exchange.save
-      redirect_to exchange_path(@exchange), notice: 'That Morty is yours, Rick!!'
+      redirect_to morty_exchange_path(@morty, @exchange), notice: 'That Morty is yours, Rick!!'
     else
-      render :new
+      render 'morties/show'
     end
   end
 
