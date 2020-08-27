@@ -30,10 +30,10 @@
   <div class="container d-flex justify-content-center mt-4 p-2">  
     <%= link_to "Back", morties_path, class:'btn mr-2 btn--green' %>
     <% if @morty.seller_rick == current_rick && rick_signed_in? %>
-      <%= link_to "Edit your Morty", new_morty_path(@morty), class:'mr-2 btn btn--yellow' %>
-      <%= link_to "Remove from Sale", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
+      <%= link_to "Edit", new_morty_path(@morty), class:'mr-2 btn btn--yellow' %>
+      <%= link_to "Remove", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
     <% end %>
-    <% if @morty.seller_rick != current_rick  %>
+    <% if @morty.seller_rick != current_rick && @morty.exchange.blank?  %>
       <% unless rick_signed_in? %>
         <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'btn btn--red' %>
       <% else %>
@@ -43,7 +43,7 @@
   </div>
   <% if rick_signed_in? %>
     <div class="profile-card mt-4 display_none" id="purchase-card">
-      <h3 class="p-2 mt-2">Yes, buy <%= @morty.title %>, <%= current_rick.username %>!</h3>
+      <h5 class="p-2 mt-2">Yes, buy <%= @morty.title %>, <%= current_rick.username %>!</h5>
       <h6 class="mb-2">Leave a message to the seller!</h6>
       <%= simple_form_for [@morty, @exchange] do |f| %>
         <%= f.input :review, input_html: { rows: 3, cols: 45 } %>
