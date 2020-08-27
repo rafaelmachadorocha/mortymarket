@@ -28,16 +28,16 @@
     </div>
   </div>
   <div class="container d-flex justify-content-center mt-4 p-2">  
-    <%= link_to "Back", morties_path, class:'btn mr-2 btn--green' %>
+    <%= link_to "Back", morties_path, class:'sciFi-button mr-2 btn--green' %>
     <% if @morty.seller_rick == current_rick && rick_signed_in? %>
-      <%= link_to "Edit", new_morty_path(@morty), class:'mr-2 btn btn--yellow' %>
-      <%= link_to "Remove", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
+      <%= link_to "Edit", new_morty_path(@morty), class:'mr-2 sciFi-button btn--yellow' %>
+      <%= link_to "Remove", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'sciFi-button btn--red' %>
     <% end %>
     <% if @morty.seller_rick != current_rick && @morty.exchange.blank?  %>
       <% unless rick_signed_in? %>
-        <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'btn btn--red' %>
+        <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'sciFi-button btn--red' %>
       <% else %>
-        <%= link_to "Buy Morty!", '#', class:'btn btn--red', id: 'button-purchase' %>
+        <%= link_to "Buy Morty!", '#', class:'sciFi-button btn--red', id: 'button-purchase' %>
       <% end %>
     <% end %>
   </div>
@@ -48,7 +48,7 @@
       <%= simple_form_for [@morty, @exchange] do |f| %>
         <%= f.input :payment, as: :radio_buttons, collection: ['Blemflarck', 'Flurbo', 'Crystal'], wrapper: :vertical_collection_inline %>
         <%= f.input :review, input_html: { rows: 3, cols: 45 } %>
-        <%= f.button :submit, 'Confirm Purchase', class: 'btn btn-primary' %>
+        <%= f.button :submit, 'Confirm Purchase', class: 'sciFi-button' %>
       <% end %>
     </div>
   </div>
