@@ -4,6 +4,7 @@ const dropdownMenu = () => {
     const dropDown = document.querySelector('.navigation-menu')
     button.addEventListener('click', (event) => {
       dropDown.classList.toggle('collapsed');
+      event.currentTarget.classList.toggle('active');
     });
   }
 }

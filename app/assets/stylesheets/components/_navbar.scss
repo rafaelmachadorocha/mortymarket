@@ -18,15 +18,13 @@ h1{
   width: 40px;
 }
 
-.dropdown-toggle {
-  @media (max-height: 575px) {
-    margin-left: auto;
-    display: block;
-  }
-}
-
 #dropdown-button {
   cursor: pointer;
+  transition: box-shadow .5s;
+}
+
+.active {
+  box-shadow: 0 0 8px $green;
 }
 
 .navigation-menu {
@@ -36,7 +34,7 @@ h1{
   right: 0;
   z-index: 2;
   padding: 10px;
-  background-color: rgba(0,0,0, .8);
+  background-color: rgb(20,20,20);
   visibility: visible;
   overflow: hidden;
   opacity: 1;
@@ -49,6 +47,8 @@ h1{
 .navigation-link {
   color: $green;
   font-family: 'helvetica neue', sans-serif;
+  text-align: center;
+  font-weight: bold;
   display: block;
   padding: 7px 0;
   
