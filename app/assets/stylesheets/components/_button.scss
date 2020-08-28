@@ -104,10 +104,11 @@ input{
 }
 
 .sciFi-input{
+  width: 100%;
   background-color:rgba($green, 0.2);
   border-color: rgba($green, 0.2);
   color: rgba($green, 0.9);
-  border-right: none;
+
   border-radius: 10px;
 
 
@@ -115,6 +116,7 @@ input{
     outline: none;
     border-color: rgba($green, 0.6);
     color: rgba($green, 0.9);
+    background-color:rgba($green, 0.2);
   }
   &::placeholder{
     color: rgba($green, 0.4);
