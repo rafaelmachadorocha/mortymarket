@@ -78,7 +78,6 @@ input{
  &::placeholder {
   color: $green;
   opacity: .5;
-  padding-left: 3px;
 }
 
   @media (max-width: 576.98px) {
@@ -132,7 +131,6 @@ color: rgba($green, 0.9);
   &:focus {
     color: rgba($green, 0.9);
     opacity: 1;
-    padding-left: 3px;
     background: rgba($green, 0.2);
     outline: none;
     border-color: rgba($green, 0.4);
@@ -158,6 +156,5 @@ color: rgba($green, 0.9);
   &::placeholder {
     color: $green;
     opacity: .5;
-    padding-left: 3px;
   }
 }
