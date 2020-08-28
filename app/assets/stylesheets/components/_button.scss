@@ -1,4 +1,4 @@
-a.sciFi-button{
+  a.sciFi-button{
   line-height: 50px;
 }
 
@@ -59,17 +59,6 @@ color: $white;
 }
 input{
     padding-left: 10px;
-  }
-.sciFi-search{
-  width: 90%;
-  background-color:rgba($green, 0.2);
-  border-color: rgba($green, 0.2);
-  color: rgba($green, 0.9);
-  border-right: none;
-  border-radius: 10px 0 0 10px;
-  
-.log-in{
-  width: 100%;
 }
 
 .sciFi-search {
@@ -107,7 +96,8 @@ border-left: none;
     opacity: 1;
     animation: fx2 0.5s ease-in-out;
     animation-fill-mode: forwards;
-    }
+}
+
 }
 @keyframes fx2 {
   to{
@@ -151,6 +141,4 @@ color: rgba($green, 0.9);
   &::placeholder{
     color: rgba($green, 0.4);
   }
-}
-
 }
