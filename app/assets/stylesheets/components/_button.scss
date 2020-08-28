@@ -57,7 +57,17 @@ color: $white;
     border: 1px rgba($white, 0.8) solid;
   }
 }
-
+input{
+    padding-left: 10px;
+  }
+.sciFi-search{
+  width: 90%;
+  background-color:rgba($green, 0.2);
+  border-color: rgba($green, 0.2);
+  color: rgba($green, 0.9);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
+  
 .log-in{
   width: 100%;
 }
@@ -121,5 +131,28 @@ color: rgba($green, 0.9);
   outline: none;
   border-color: rgba($green, 0.4);
 }
+}
+
+
+ 
+
+.sciFi-input{
+  width: 100%;
+  background-color:rgba($green, 0.2);
+  border-color: rgba($green, 0.2);
+  color: rgba($green, 0.9);
+
+  border-radius: 10px;
+
+
+  &:focus{
+    outline: none;
+    border-color: rgba($green, 0.6);
+    color: rgba($green, 0.9);
+    background-color:rgba($green, 0.2);
+  }
+  &::placeholder{
+    color: rgba($green, 0.4);
+  }
 }
 

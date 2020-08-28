@@ -58,6 +58,9 @@ a.link-seller-info {
   right: 12%;
   top: 5%;
   z-index: 1;
+  @media (max-width: 575.98px) {
+    display: none;
+    }
 }
 
 .display_none {

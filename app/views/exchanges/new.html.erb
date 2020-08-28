@@ -27,22 +27,25 @@
     </div>
   </div>
   <div class="container d-flex justify-content-center mt-4 p-2">  
-    <%= link_to "Back", morties_path, class:'btn mr-2 btn--green' %>
+    <%= link_to "Back", morties_path, class:'btn mr-2 sciFi-button btn--green' %>
     <% if @morty.seller_rick == current_rick && rick_signed_in? %>
-      <%= link_to "Edit your Morty", edit_morty_path(@morty), class:'mr-2 btn btn--yellow' %>
+      <%= link_to "Edit your Morty", edit_morty_path(@morty), class:'mr-2 sciFi-button btn--yellow' %>
       <%= link_to "Remove from Sale", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
     <% end %>
     <% if @morty.seller_rick == current_rick %>
-      <%= link_to "Buy Morty!", '#', class:'btn btn--red', id:'button-purchase' %>
+      <%= link_to "Buy Morty!", '#', class:'btn sciFi-button btn--red', id:'button-purchase' %>
     <% end %>
   </div>
+  <div class="profile-card mt-4 display_none" id="purchase-stimulus">
+      <h5 class="p-2 mt-2 text-center">Yes, buy <%= @morty.title %>, <%= current_rick.username %>!</h5>
+  </div>
   <div class="profile-card mt-4 display_none" id="purchase-card">
-    <h5 class="p-2 mt-2">Yes, buy <%= @morty.title %>, <%= current_rick.username %>!</h5>
     <h6 class="mb-2">Leave a message to the seller!</h6>
     <%= simple_form_for [@morty, @exchange] do |f| %>
       <%= f.input :payment, as: :radio_buttons, collection: ['Blemflarck', 'Flurbo', 'Crystal'], wrapper: :vertical_collection_inline %>
+      <h6 class="mb-2">Leave a message to the seller!</h6>
       <%= f.input :review, input_html: { rows: 3, cols: 45 } %>
-      <%= f.button :submit, 'Confirm Purchase', class: 'btn btn-primary' %>
+      <%= f.button :submit, 'Confirm', class: 'btn sciFi-button' %>
     <% end %>
   </div>
 </div>
