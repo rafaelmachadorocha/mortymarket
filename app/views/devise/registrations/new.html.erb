@@ -1,35 +1,32 @@
 <div class="row justify-content-center p-4">
   <div class="col-12 col-md-6 col-lg-4">
-    <h2 class="mb-4">Sign up</h2>
+    <h2 class="mb-4">Sign up</h2> 
     <div class="form">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
-          <%= f.input :username,
-                      input_html: { autocomplete: "email", class:"sciFi-login" } %>
-          <%= f.input :password,
-                      hint: "leave it blank if you don't want to change it",
-                      required: false,
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
-                      required: false,
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :current_password,
-                      hint: "we need your current password to confirm your changes",
+          <%= f.input :username,  input_html: {  class: 'sciFi-input' } %>
+          <%= f.input :email,
                       required: true,
-                      input_html: { autocomplete: "current-password" } %>
-          <%= f.input :bio %>
+                      autofocus: true,
+                      input_html: { class: 'sciFi-input', autocomplete: "email" }%>
+          <%= f.input :password,
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { class: 'sciFi-input', autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      required: true,
+                      input_html: { class: 'sciFi-input', autocomplete: "new-password" } %>
           <%= f.input :photo, as: :file %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Update", class:'sciFi-button' %>
+          <%= f.button :submit, "Sign up", class:'sciFi-button btn--green' %>
           <%= link_to 'Back', :back, class: 'sciFi-button btn--yellow' %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-<% end %>
-<%= link_to "Back", :back %>
-</div>
+
+<%= render "devise/shared/links" %>
