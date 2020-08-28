@@ -1,10 +1,11 @@
 .banner {
   background-size: cover;
-  background-position: center;
+  background-position: right 0% bottom 68%;
   padding: 150px 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner.png');
+  background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner1.png');
   @media (max-width: 575.98px) {
-    background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner_pic2.png');
+    background-position: center;
+    background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner1mobile.png');
   }
 }
 
