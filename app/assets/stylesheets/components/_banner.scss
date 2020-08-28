@@ -1,15 +1,32 @@
-.banner {
+.banner1 {
   background-size: cover;
   background-position: right 0% bottom 68%;
   padding: 150px 0;
   background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner1.png');
   @media (max-width: 575.98px) {
-    background-position: center;
-    background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner1mobile.png');
+
+  background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner1mobile.png');
+
   }
 }
-
-.banner h1 {
+ p {
+  font-size: 30px;
+  color: white;
+  opacity: .8;
+  text-shadow: 0px 0px 3px $green;
+  margin-bottom: 1.5em;
+}
+}
+.banner2 {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner2.png');
+  @media (max-width: 575.98px) {
+    background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner2mini.png');
+}
+ h1 {
   margin: 0;
   color: $yellow;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
@@ -20,10 +37,11 @@
     line-height: 1.5em;
   }
 }
-
-.banner p {
+ p {
   font-size: 30px;
   color: white;
   opacity: .8;
   text-shadow: 0px 0px 3px $green;
+  margin-bottom: 1.5em;
+}
 }

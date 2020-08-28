@@ -13,7 +13,7 @@ body {
   width: 100%;
   font-family: 'helvetica neue', sans-serif;
   padding-bottom: 20px;
-  overflow-x: hidden; 
+  overflow-x: hidden;
   background-color: black; /* Used if the image is unavailable */
 }
 
@@ -38,7 +38,7 @@ body {
   }
   @keyframes mymove {
     0% {
-      background-position-x: 0px;
+      background-position-x: 100%;
       opacity: 0.5;
     }
     25% {
@@ -51,7 +51,7 @@ body {
       opacity: 1;
     }
     100% {
-      background-position-x: 100%;
+      background-position-x: 0px;
       opacity: 0.5;
     }
   }
