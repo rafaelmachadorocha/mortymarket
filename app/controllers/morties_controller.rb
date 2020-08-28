@@ -7,7 +7,10 @@ class MortiesController < ApplicationController
 
     if search.present?
       sql = "title ILIKE :query OR description ILIKE :query"
-      @morties = Morty.where(sql, query: "%#{search}%")
+      search_morties = Morty.where(sql, query: "%#{search}%")
+      @morties = search_morties.select do |morty|
+        morty.buyer_rick.blank?
+      end
     else
       all_morties = Morty.all
       @morties = all_morties.select do |morty|
