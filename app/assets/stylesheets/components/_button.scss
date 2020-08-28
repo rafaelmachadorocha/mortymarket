@@ -33,11 +33,11 @@
   }
 
 }
-#buy{
+.buy{
   width: 50%;
   height: 75px;
   font-size: 30px;
-  line-height: 75px;
+  line-height: 75px !important;
 }
 .btn--yellow {
     color: $yellow;

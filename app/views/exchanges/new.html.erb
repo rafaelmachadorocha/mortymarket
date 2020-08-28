@@ -26,14 +26,16 @@
       <% end %>
     </div>
   </div>
-  <div class="container d-flex justify-content-center mt-4 p-2">  
-    <%= link_to "Back", morties_path, class:'btn mr-2 sciFi-button btn--green' %>
+  <div class="container d-flex justify-content-center mt-4 p-2">
+   <% if @morty.seller_rick != current_rick %>
+      <%= link_to "Buy Morty!", '#', class:'sciFi-button btn--yellow buy', id:'button-purchase' %>
+    <% end %>
+    </div>
+  <div class="container d-flex justify-content-center mt-4 p-2">
+    <%= link_to "Back", morties_path, class:'mr-2 sciFi-button' %>
     <% if @morty.seller_rick == current_rick && rick_signed_in? %>
       <%= link_to "Edit your Morty", edit_morty_path(@morty), class:'mr-2 sciFi-button btn--yellow' %>
       <%= link_to "Remove from Sale", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'btn btn--red' %>
-    <% end %>
-    <% if @morty.seller_rick != current_rick %>
-      <%= link_to "Buy Morty!", '#', class:'btn sciFi-button btn--red', id:'button-purchase' %>
     <% end %>
   </div>
   <div class="profile-card mt-4 display_none" id="purchase-stimulus">
