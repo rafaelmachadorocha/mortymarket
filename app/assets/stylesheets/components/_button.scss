@@ -24,8 +24,8 @@
     opacity: 1;
     animation: fx 0.5s ease-in-out;
     animation-fill-mode: forwards;
-    }
   }
+}
 
 @keyframes fx {
   to{
@@ -48,10 +48,10 @@
     color: $red;
     border: 1px rgba($red, 0.8) solid;
     }
-  }
+}
 .btn--gray {
-color: $white;
-    border: 1px rgba($white, 0.2) solid;
+  color: $white;
+  border: 1px rgba($white, 0.2) solid;
   &:hover{
     color: $white;
     border: 1px rgba($white, 0.8) solid;
@@ -62,18 +62,22 @@ input{
 }
 
 .sciFi-search {
-border-color: rgba($green, 0);
-background: rgba($green, 0.1);
-width: 90%;
-opacity: 0.9;
-border-radius: 10px 0 0 10px;
-color: rgba($green, 0.9);
+  border-color: rgba($green, 0);
+  background: rgba($green, 0.1);
+  width: 90%;
+  opacity: 0.9;
+  border-radius: 10px 0 0 10px;
+  color: rgba($green, 0.9);
 
-&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+ ::placeholder { 
   color: rgba($green, 0.5);
-  opacity: 1; /* Firefox */
+  opacity: 1; 
   padding-left: 3px;
 }
+
+  @media (max-width: 576.98px) {
+    width:70%
+  }
 }
 
 .sciFi-search:focus{
@@ -81,24 +85,30 @@ color: rgba($green, 0.9);
   border-color: rgba($green, 0.4);
 }
 
+
 .sciFi-search-button {
-border-color: rgba($green, 0.1);
-background: rgba($green, 0);
-color: rgba($green, 0.8);
-width: 10%;
-opacity: 0.9;
-border-radius: 0 10px 10px 0;
-border-left: none;
+  border-color: rgba($green, 0.1);
+  background: rgba($green, 0);
+  color: rgba($green, 0.8);
+  width: 10%;
+  opacity: 0.9;
+  border-radius: 0 10px 10px 0;
+  border-left: none;
 
+  @media (max-width: 576.98px) {
+    font-size: .1em;
+  }
+ 
 
-&:hover{
+  &:hover{
     color: $green;
     opacity: 1;
     animation: fx2 0.5s ease-in-out;
     animation-fill-mode: forwards;
-}
+  }
 
 }
+
 @keyframes fx2 {
   to{
     border-color: rgba($green, 0.3);
@@ -113,14 +123,14 @@ opacity: 0.9;
 border-radius: 10px;
 color: rgba($green, 0.9);
 
-&:focus { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgba($green, 0.9);
-  opacity: 1; /* Firefox */
-  padding-left: 3px;
-  background: rgba($green, 0.2);
-  outline: none;
-  border-color: rgba($green, 0.4);
-}
+  &:focus {
+    color: rgba($green, 0.9);
+    opacity: 1; 
+    padding-left: 3px;
+    background: rgba($green, 0.2);
+    outline: none;
+    border-color: rgba($green, 0.4);
+  }
 }
 
 .sciFi-input{
@@ -138,6 +148,7 @@ color: rgba($green, 0.9);
     color: rgba($green, 0.9);
     background-color:rgba($green, 0.2);
   }
+  
   &::placeholder{
     color: rgba($green, 0.4);
   }
