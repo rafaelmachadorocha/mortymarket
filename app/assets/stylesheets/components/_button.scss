@@ -31,8 +31,14 @@
   to{
     border-radius: 50px;
   }
-}
 
+}
+#buy{
+  width: 50%;
+  height: 75px;
+  font-size: 30px;
+  line-height: 75px;
+}
 .btn--yellow {
     color: $yellow;
     border: 1px rgba($yellow, 0.2) solid;
@@ -69,9 +75,9 @@ input{
   border-radius: 10px 0 0 10px;
   color: rgba($green, 0.9);
 
- ::placeholder { 
+ ::placeholder {
   color: rgba($green, 0.5);
-  opacity: 1; 
+  opacity: 1;
   padding-left: 3px;
 }
 
@@ -98,7 +104,7 @@ input{
   @media (max-width: 576.98px) {
     font-size: .1em;
   }
- 
+
 
   &:hover{
     color: $green;
@@ -125,7 +131,7 @@ color: rgba($green, 0.9);
 
   &:focus {
     color: rgba($green, 0.9);
-    opacity: 1; 
+    opacity: 1;
     padding-left: 3px;
     background: rgba($green, 0.2);
     outline: none;
@@ -148,7 +154,7 @@ color: rgba($green, 0.9);
     color: rgba($green, 0.9);
     background-color:rgba($green, 0.2);
   }
-  
+
   &::placeholder{
     color: rgba($green, 0.4);
   }
