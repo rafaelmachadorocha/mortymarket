@@ -1,15 +1,19 @@
 <div class="row justify-content-center p-4">
   <div class="col-12 col-md-6 col-lg-4">
-    <h2 class="mb-4">Edit Profile</h2>
-    <div class="form">
-      <%= simple_form_for(@rick, url: profile_path(@rick)) do |f| %>
-      <%= f.input :username %>
-      <%= f.input :bio %>
-      <%= f.input :photo, as: :file %>
-      <%= f.button :submit, class: 'sciFi-button mb-2' %>
-      <% end %>
+    <div class="profile-card w-100 mt-3">
+      <h2 class="mb-4 mt-4">Edit Profile</h2>
+      <div class="form">
+        <%= simple_form_for(@rick, url: profile_path(@rick)) do |f| %>
+        <%= f.input :username, input_html: { class: 'sciFi-input'} %>
+        <%= f.input :bio, input_html: { class: 'sciFi-input'} %>
+        <%= f.input :photo, as: :file %>
+        <%= f.button :submit, class: 'sciFi-button mb-2', class: 'sicFi-input' %>
+        <% end %>
+      </div>
     </div>
-    <%= link_to 'Back', :back, class:'sciFi-button btn--yellow' %>
-    <%= link_to "Home", morties_path, class:'sciFi-button' %>
+   <div class="d-flex justify-content-center mt-4 p-2 w-100">
+      <%= link_to 'Back', :back, class:'sciFi-button mr-2' %>
+      <%= link_to "Edit", edit_profile_path(@rick), class:'sciFi-button btn--yellow' %>
+    </div>
   </div>
 </div>

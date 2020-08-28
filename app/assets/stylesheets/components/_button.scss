@@ -57,4 +57,68 @@ color: $gray;
     border: 1px rgba($gray, 0.8) solid;
   }
 }
+input{
+    padding-left: 10px;
+  }
+.sciFi-search{
+  width: 90%;
+  background-color:rgba($green, 0.2);
+  border-color: rgba($green, 0.2);
+  color: rgba($green, 0.9);
+  border-right: none;
+  border-radius: 10px 0 0 10px;
 
+
+  &:focus{
+    outline: none;
+    border-color: rgba($green, 0.6);
+    color: rgba($green, 0.9);
+  }
+  &::placeholder{
+    color: rgba($green, 0.4);
+  }
+}
+.sciFi-search-btn{
+    color: $green;
+    background-color: rgba($green, 0.2);
+    border: 1px rgba($green, 0.2) solid;
+    font: $body-font;
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    outline: 0;
+    opacity: 0.7;
+    border-radius: 0 10px 10px 0;
+
+
+  &:hover{
+    color: $green;
+    border: 1px rgba($green, 0.8) solid;
+    opacity: 1;
+}
+}
+
+.sciFi-input{
+  width: 100%;
+  background-color:rgba($green, 0.2);
+  border-color: rgba($green, 0.2);
+  color: rgba($green, 0.9);
+
+  border-radius: 10px;
+
+
+  &:focus{
+    outline: none;
+    border-color: rgba($green, 0.6);
+    color: rgba($green, 0.9);
+    background-color:rgba($green, 0.2);
+  }
+  &::placeholder{
+    color: rgba($green, 0.4);
+  }
+}
