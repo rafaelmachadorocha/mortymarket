@@ -5,7 +5,10 @@ class ProfilesController < ApplicationController
   def show
   end
 
-  def edit    
+  def edit 
+    if current_rick != @rick
+      redirect_to morties_path, notice: "You can't edit that profile!"
+    end 
   end
 
   def update
