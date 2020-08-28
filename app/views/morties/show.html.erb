@@ -37,7 +37,7 @@
     <% end %>
   </div>
   <div class="container d-flex justify-content-center mt-4 p-2">
-    <%= link_to "Back", morties_path, class:'sciFi-button mr-2' %>
+    <%= link_to "Back", :back, class:'sciFi-button mr-2' %>
     <% if @morty.seller_rick == current_rick && rick_signed_in? %>
 
       <%= link_to "Edit", edit_morty_path(@morty), class:'mr-2 sciFi-button btn--red' %>
