@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('BannerHome.png');
+  background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner.png');
   @media (max-width: 575.98px) {
     background-image: linear-gradient(rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.6) 50%), asset-url('banner_pic2.png');
   }
@@ -16,6 +16,7 @@
   font-weight: bold;
   @media (max-width: 575.98px) {
     margin-bottom: .5em;
+    line-height: 1.5em;
   }
 }
 
