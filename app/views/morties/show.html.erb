@@ -27,20 +27,23 @@
       <% end %>
     </div>
   </div>
+   <hr>
   <div class="container d-flex justify-content-center mt-4 p-2">
-    <%= link_to "Back", morties_path, class:'sciFi-button mr-2 btn--yellow' %>
+    <% if @morty.seller_rick != current_rick && @morty.exchange.blank?  %>
+      <% unless rick_signed_in? %>
+        <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'sciFi-button btn--yellow', id:'buy' %>
+      <% else %>
+        <%= link_to "Buy Morty!", '#', class:'sciFi-button buy', id: 'button-purchase' %>
+      <% end %>
+    <% end %>
+    </div>
+    <div class="container d-flex justify-content-center mt-4 p-2">
+    <%= link_to "Back", morties_path, class:'sciFi-button mr-2' %>
     <% if @morty.seller_rick == current_rick && rick_signed_in? %>
 
       <%= link_to "Edit", edit_morty_path(@morty), class:'mr-2 sciFi-button btn--red' %>
 
       <%= link_to "Remove", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'sciFi-button btn--red' %>
-    <% end %>
-    <% if @morty.seller_rick != current_rick && @morty.exchange.blank?  %>
-      <% unless rick_signed_in? %>
-        <%= link_to "Buy Morty!", new_morty_exchange_path(@morty), class:'sciFi-button' %>
-      <% else %>
-        <%= link_to "Buy Morty!", '#', class:'sciFi-button', id: 'button-purchase' %>
-      <% end %>
     <% end %>
   </div>
   <% if rick_signed_in? %>
