@@ -48,7 +48,7 @@
       <%= simple_form_for [@morty, @exchange] do |f| %>
         <%= f.input :payment, as: :radio_buttons, collection: ['Blemflarck', 'Flurbo', 'Crystal'], wrapper: :vertical_collection_inline %>
         <%= f.input :review, input_html: { rows: 3, cols: 45 } %>
-        <%= f.button :submit, 'Confirm Purchase', class: 'sciFi-button' %>
+        <%= f.button :submit, 'Confirm', class: 'sciFi-button' %>
       <% end %>
     </div>
   </div>
