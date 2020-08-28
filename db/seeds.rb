@@ -66,7 +66,7 @@ m10 = Morty.new(price: 700, rarity: 5, title: 'Slick Morty',
 m10.seller_rick = r5
 m10.save!
 
-e = Exchange.new(review: 'Great deal!')
+e = Exchange.new(review: 'Great deal!', payment:'Blemflarck')
 e.morty = m1
 e.rick = r2
 e.save!
