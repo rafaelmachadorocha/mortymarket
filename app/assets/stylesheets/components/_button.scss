@@ -75,9 +75,9 @@ input{
   border-radius: 10px 0 0 10px;
   color: rgba($green, 0.9);
 
- ::placeholder {
-  color: rgba($green, 0.5);
-  opacity: 1;
+ &::placeholder {
+  color: $green;
+  opacity: .5;
   padding-left: 3px;
 }
 
@@ -102,7 +102,7 @@ input{
   border-left: none;
 
   @media (max-width: 576.98px) {
-    font-size: .1em;
+    width: 30%;
   }
 
 
@@ -154,8 +154,10 @@ color: rgba($green, 0.9);
     color: rgba($green, 0.9);
     background-color:rgba($green, 0.2);
   }
-
-  &::placeholder{
-    color: rgba($green, 0.4);
+ 
+  &::placeholder {
+    color: $green;
+    opacity: .5;
+    padding-left: 3px;
   }
 }
