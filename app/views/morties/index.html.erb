@@ -28,7 +28,7 @@
                 <i class="far fa-gem rarity-icon"></i>
               <% end %>
             </div>
-            <h2 class="card-trip-pricing">฿<%= morty.price %></h2>
+            <h2 class="card-trip-pricing">฿ <%= morty.price %></h2>
             <% if morty.seller_rick.photo.attached? %>
               <%= cl_image_tag morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill, gravity: :face %>
             <% else %>
