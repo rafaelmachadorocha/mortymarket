@@ -45,7 +45,7 @@ class MortiesController < ApplicationController
     if @morty.seller_rick == current_rick
       @morty = Morty.find(params[:id])
     else
-      redirect_to root_path, notice: "You can't not the owner of that Morty."
+      redirect_to root_path, notice: "You can't edit that Morty."
     end      
   end
 
@@ -58,12 +58,12 @@ class MortiesController < ApplicationController
   end
 
   def destroy
-    if @morty.seller_rick == current_rick
+    if @morty.seller_rick == current_rick && @morty.exchange.blank?
       @morty = Morty.find(params[:id])
       @morty.destroy
       redirect_to root_path, notice: 'Morty removed from sale!'  
     else
-      redirect_to root_path, notice: 'You are not the owner of that Morty.'
+      redirect_to root_path, notice: "You can't remove that Morty."
     end  
   end
 
