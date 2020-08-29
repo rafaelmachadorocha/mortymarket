@@ -45,7 +45,7 @@ class MortiesController < ApplicationController
     if @morty.seller_rick == current_rick
       @morty = Morty.find(params[:id])
     else
-      redirect_to root_path, notice: 'You are not the owner of that Morty.'
+      redirect_to root_path, notice: "You can't not the owner of that Morty."
     end      
   end
 
