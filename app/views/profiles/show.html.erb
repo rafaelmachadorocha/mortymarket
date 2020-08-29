@@ -3,11 +3,11 @@
   <div class="profile-card mt-5">
     <div class="profile-content rick">
       <% if @rick.photo.attached? %>
-        <%= cl_image_tag @rick.photo.key, class: 'profilepic mt-5' %>
+        <%= cl_image_tag @rick.photo.key, class: 'profilepic mt-2' %>
       <% else %>
-        <%= image_tag 'avatar_rick.png', class: 'profilepic mt-5' %>
+        <%= image_tag 'avatar_rick.png', class: 'profilepic mt-2' %>
       <% end %>
-      <h3 class="text-center my-4"><%= @rick.username %></h3>
+      <h3 class="text-center mb-4 mt-3"><%= @rick.username %></h3>
       <p class="text-justify"><%= @rick.bio %></p>
       <p><strong>Morties sold: <%= @rick.sold_morties.count %></strong></p>
     </div>

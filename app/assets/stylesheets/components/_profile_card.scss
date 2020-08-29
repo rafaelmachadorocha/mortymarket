@@ -10,13 +10,16 @@
   border-radius: 30px;
   color: $green;
   width: 500px;
-  min-height: 500px;
   margin: 0 auto;
 
   @media (max-width: 575.98px) {
     width: 100%;
   }
   
+}
+
+.min-height {
+  min-height: 500px;
 }
 
 .profilepic {
@@ -31,7 +34,10 @@
   display: block;
 }
 
-.info {
+.edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pic {
