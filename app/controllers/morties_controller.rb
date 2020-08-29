@@ -67,14 +67,6 @@ class MortiesController < ApplicationController
     end  
   end
 
-  def my_morties
-    all_morties = Morty.all
-    @morties = all_morties.select do |morty|
-      # morty.seller_rick == current_rick && morty.buyer_rick.nil?
-      morty.buyer_rick == current_rick
-    end
-  end
-
   private
 
   def set_morty
