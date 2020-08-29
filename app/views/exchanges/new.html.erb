@@ -20,7 +20,7 @@
       </div>
       <p class="my-3"><%= @morty.description %></p>
       <% if @morty.photo.attached? %>
-        <%= cl_image_tag @morty.photo.key, height: 300, width: 400, crop: :fill, class: 'show-image' %>
+        <%= cl_image_tag @morty.photo.key, crop: :fill, class: 'show-image' %>
       <% else %>
         <%= image_tag 'Morty3.png', class: 'show-image' %>
       <% end %>
