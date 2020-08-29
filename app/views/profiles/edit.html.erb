@@ -4,8 +4,8 @@
       <h2 class="mb-4 mt-4">Edit Profile</h2>
       <div class="form">
         <%= simple_form_for(@rick, url: profile_path(@rick)) do |f| %>
-        <%= f.input :username, input_html: { class: 'sciFi-input'} %>
-        <%= f.input :bio, input_html: { class: 'sciFi-input'} %>
+        <%= f.input :username, input_html: { class: 'sciFi-search sciFi-input'} %>
+        <%= f.input :bio, input_html: { class: 'sciFi-search sciFi-input'} %>
         <%= f.input :photo, as: :file %>
         <%= f.button :submit, class: 'sciFi-button btn--green mb-2' %>
         <% end %>

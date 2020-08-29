@@ -1,10 +1,10 @@
-<div class="form">
+<div class="form w-100">
   <%= simple_form_for(morty) do |f| %>
-  <%= f.input :title, input_html: { class: 'sciFi-input' } %>
-  <%= f.input :price, input_html: { class: 'sciFi-input' } %>
-  <%= f.input :rarity, input_html: { class: 'sciFi-input' }, collection: 1..5 %>
-  <%= f.input :description, input_html: { class: 'sciFi-input' } %>
-  <%= f.input :photo, as: :file %>
-  <%= f.button :submit, class: 'sciFi-button mb-2' %>
+    <%= f.input :title, input_html: { class: 'sciFi-search sciFi-input' } %>
+    <%= f.input :price, input_html: { class: 'sciFi-search sciFi-input' } %>
+    <%= f.input :rarity, input_html: { class: 'sciFi-search sciFi-input' }, collection: 1..5 %>
+    <%= f.input :description, input_html: { class: 'sciFi-search sciFi-input' } %>
+    <%= f.input :photo, as: :file %>
+    <%= f.button :submit, class: 'sciFi-button mb-2' %>
   <% end %>
 </div>

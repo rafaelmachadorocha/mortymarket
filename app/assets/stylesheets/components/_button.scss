@@ -76,21 +76,23 @@ input{
   border-radius: 10px 0 0 10px;
   color: rgba($green, 0.9);
 
- &::placeholder {
-  color: $green;
-  opacity: .5;
-}
+  &::placeholder {
+    color: $green;
+    opacity: .5;
+  }
+
+  &:focus {
+    color: rgba($green, 0.9);
+    opacity: 1;
+    background: rgba($green, 0.2);
+    outline: none;
+    border-color: rgba($green, 0.4);
+  }
 
   @media (max-width: 576.98px) {
-    width:70%
+    width:75%
   }
 }
-
-.sciFi-search:focus{
-  outline: none;
-  border-color: rgba($green, 0.4);
-}
-
 
 .sciFi-search-button {
   border-color: rgba($green, 0.1);
@@ -102,7 +104,7 @@ input{
   border-left: none;
 
   @media (max-width: 576.98px) {
-    width: 30%;
+    width: 25%;
   }
 
 
@@ -122,40 +124,28 @@ input{
   }
 }
 
-.sciFi-login{
+.sciFi-input  {
   border-color: rgba($green, 0);
   background: rgba($green, 0.1);
   opacity: 0.9;
   border-radius: 10px;
   color: rgba($green, 0.9);
+  width: 100%;
 
-  &:focus {
-    color: rgba($green, 0.9);
-    opacity: 1;
-    background: rgba($green, 0.2);
-    outline: none;
-    border-color: rgba($green, 0.4);
+  @media (max-width: 576.98px) {
+    width:100%
   }
+
 }
 
-.sciFi-input{
-  width: 100%;
-  background-color:rgba($green, 0.2);
-  border-color: rgba($green, 0.2);
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+
+  border-color: rgba($green, 0);
+  background: rgba($green, 0.1);
+  opacity: 0.9;
   color: rgba($green, 0.9);
 
-  border-radius: 10px;
-
-
-  &:focus{
-    outline: none;
-    border-color: rgba($green, 0.6);
-    color: rgba($green, 0.9);
-    background-color:rgba($green, 0.2);
-  }
- 
-  &::placeholder {
-    color: $green;
-    opacity: .5;
-  }
 }

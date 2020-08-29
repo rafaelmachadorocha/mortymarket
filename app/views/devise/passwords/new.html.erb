@@ -1,9 +1,8 @@
 <div class="row justify-content-center p-4">
   <div class="col-12 col-md-6 col-lg-4">
-    <h2 class="mb-4">Change your password</h2>
     <div class="form">
 
-      <h2>Forgot your password?</h2>
+      <h2 class="mb-4">Forgot your password?</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
         <%= f.error_notification %>
@@ -12,11 +11,11 @@
           <%= f.input :email,
                       required: true,
                       autofocus: true,
-                      input_html: { autocomplete: "email" } %>
+                      input_html: { autocomplete: "email", class: 'sciFi-search sciFi-input' } %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Send me reset password instructions", class:'sciFi-button' %>
+          <%= f.button :submit, "Send me email", class:'mr-2 sciFi-button' %>
           <%= link_to 'Back', :back, class: 'sciFi-button btn--yellow' %>
         </div>
       <% end %>
