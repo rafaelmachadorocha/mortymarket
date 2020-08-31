@@ -44,7 +44,7 @@
     <%= link_to "Home", morties_path, class:'sciFi-button mr-2' %>
     <% if @morty.seller_rick == current_rick && rick_signed_in? && @morty.exchange.blank? %>
 
-      <%= link_to "Edit", edit_morty_path(@morty), class:'mr-2 sciFi-button btn--red' %>
+      <%= link_to "Edit", edit_morty_path(@morty), class:'mr-2 sciFi-button btn--yellow' %>
 
       <%= link_to "Remove", @morty, method: :delete, data: { confirm: 'Are you sure, Rick?' }, class:'sciFi-button btn--red' %>
     <% end %>

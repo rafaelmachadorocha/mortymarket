@@ -140,12 +140,17 @@ input{
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active {
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
 
-  border-color: rgba($green, 0);
-  background: rgba($green, 0.1);
-  opacity: 0.9;
-  color: rgba($green, 0.9);
+  border-color: rgba($green, 0) !important;
+  background: rgba($green, 0.1) !important;
+  opacity: 0.9 !important;
+  color: rgba($green, 0.9) !important;
 
 }
