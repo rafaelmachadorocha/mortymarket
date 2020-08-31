@@ -18,7 +18,7 @@ class ExchangesController < ApplicationController
     if @exchange.save
       redirect_to morty_exchange_path(@morty, @exchange), notice: 'That Morty is yours, Rick!!'
     else
-      render 'morties/show'
+      render :new
     end
   end
 
