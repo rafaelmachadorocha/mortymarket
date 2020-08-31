@@ -3,6 +3,7 @@ class ProfilesController < ApplicationController
   before_action :set_rick
 
   def show
+    @morties_sold = @rick.sold_morties.select { |morty| morty.exchange.present? }
   end
 
   def edit 
