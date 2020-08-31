@@ -1,16 +1,28 @@
 <div class="container">
 
   <div class="profile-card min-height mt-5">
-
-    <%= link_to profile_path(@morty.seller_rick), class:'link-seller-info' do %>
-      <div class="seller-info">
-        <% if @morty.seller_rick.photo.attached? %>
-          <%= cl_image_tag @morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill %>
-        <% else %>
-          <%= image_tag 'avatar_rick.png', class: 'card-trip-user avatar' %>
-        <% end %>
-        <p>Seller</p>
-      </div>
+    <% if current_rick != @morty.buyer_rick && @morty.exchange.present? %>
+       <%= link_to profile_path(@morty.buyer_rick), class:'link-seller-info' do %>
+        <div class="seller-info">
+          <% if @morty.buyer_rick.photo.attached? %>
+            <%= cl_image_tag @morty.buyer_rick.photo.key, class: 'card-trip-user avatar', crop: :fill %>
+          <% else %>
+            <%= image_tag 'avatar_rick.png', class: 'card-trip-user avatar' %>
+          <% end %>
+          <p>Buyer</p>
+        </div>
+      <% end %>
+    <% else %>
+      <%= link_to profile_path(@morty.seller_rick), class:'link-seller-info' do %>
+        <div class="seller-info">
+          <% if @morty.seller_rick.photo.attached? %>
+            <%= cl_image_tag @morty.seller_rick.photo.key, class: 'card-trip-user avatar', crop: :fill %>
+          <% else %>
+            <%= image_tag 'avatar_rick.png', class: 'card-trip-user avatar' %>
+          <% end %>
+          <p>Seller</p>
+        </div>
+      <% end %>
     <% end %>
     <div class="info">
       <h3><%= @morty.title %></h3>
